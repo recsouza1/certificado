@@ -1,10 +1,10 @@
 class Aluno
 
-	attr_accessor :nome, :cpf
+	attr_accessor :nome, :graduacao
 	
-	def initialize(nome,cpf)
+	def initialize(nome,graduacao)
 		@nome = nome
-		@cpf = cpf
+		@graduacao = graduacao
 	end
 
 end

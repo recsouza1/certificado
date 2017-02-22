@@ -2,7 +2,11 @@ require './lib/certificado'
 require './lib/aluno'
 require './lib/gerar'
 
-aluno = Aluno.new('Rafael','123')
+puts "Qual a graduação?"
+faixa = gets.chomp
+Certificado.new.image(faixa)
+
+aluno = Aluno.new('Rafael','branca')
 
 certificado = Certificado.new(aluno)
 
