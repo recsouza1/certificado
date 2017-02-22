@@ -2,7 +2,7 @@ require 'active_model'
 require 'yaml'
 
 class Certificado
-	
+
 	attr_accessor :aluno
 	
 	def initialize(aluno)
@@ -14,12 +14,12 @@ class Certificado
 	end
 
 	def image(graduacao)
-		background = { branca: background.jpg,
-		               azul: stars.jpg,
-		               amarela: aurora.jpg
+		background = { branca: "background.jpg",
+		               azul: "stars.jpg",
+		               amarela: "aurora.jpeg"
 		}
-		$picture = background.select { |key, value| key.to_s.match(graduacao)}
+		pre_picture = background.select { |key, value| key.to_s.match(graduacao)}
+		pre_picture.each { |key, value| return value }
 	end
-
 
 end

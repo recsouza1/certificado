@@ -10,7 +10,7 @@ class GeradorCertificado
 			page_layout: :landscape,
 			margin: 0) do |pdf|
 			
-			pdf.image "/certificado/images/#{$picture}", fit:[297.mm,210.mm]
+			pdf.image "/home/recsouza/projects/certificado/images/#{$picture}", fit:[297.mm,210.mm]
 
 			texto_corpo(pdf,certificado)
 

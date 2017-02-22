@@ -3,12 +3,12 @@ require './lib/aluno'
 require './lib/gerar'
 
 puts "Qual a graduação?"
-faixa = gets.chomp
-Certificado.new.image(faixa)
+belt = gets.chomp
 
-aluno = Aluno.new('Rafael','branca')
+aluno = Aluno.new('Rafael', belt)
 
 certificado = Certificado.new(aluno)
 
-GeradorCertificado.new.gerar_certificado(certificado)
+$picture = certificado.image(belt)
 
+GeradorCertificado.new.gerar_certificado(certificado)
