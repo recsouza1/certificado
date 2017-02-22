@@ -18,8 +18,13 @@ class Certificado
 		               azul: "stars.jpg",
 		               amarela: "aurora.jpeg"
 		}
+		if background.has_key?(graduacao.to_sym)
 		pre_picture = background.select { |key, value| key.to_s.match(graduacao)}
 		pre_picture.each { |key, value| return value }
+		else
+		puts "Graduação \"#{graduacao}\" não cadastrada, entre em contato com fulano."
+		abort
+		end
 	end
 
 end
