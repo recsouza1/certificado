@@ -1,5 +1,6 @@
 require 'active_model'
 require 'yaml'
+require 'pry'
 
 class Certificado
 
@@ -14,17 +15,15 @@ class Certificado
 	end
 
 	def image(graduacao)
-		background = { branca: "background.jpg",
-		               azul: "stars.jpg",
-		               amarela: "aurora.jpeg"
-		}
-		if background.has_key?(graduacao.to_sym)
-		pre_picture = background.select { |key, value| key.to_s.match(graduacao)}
-		pre_picture.each { |key, value| return value }
-		else
-		puts "Graduação \"#{graduacao}\" não cadastrada, entre em contato com fulano."
-		abort
-		end
+		imagem = { 
+			branca: "background.jpg",
+       		azul: "stars.jpg",
+       		amarela: "aurora.jpeg"
+		}[graduacao.to_sym]
+
+		raise "Graduação \"#{graduacao}\" não cadastrada, entre em contato com fulano." if imagem.nil?
+
+		imagem
 	end
 
 end
