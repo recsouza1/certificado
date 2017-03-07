@@ -3,9 +3,9 @@ require 'prawn/measurement_extensions'
 
 class GeradorCertificado
 
-	def gerar_certificado(certificado, path, line)
+	def gerar_certificado(certificado, path, names)
 
-		Prawn::Document.generate("#{path}#{line}.pdf",
+		Prawn::Document.generate("#{path}#{names}.pdf",
 			page_size: "A4",
 			page_layout: :landscape,
 			margin: 0) do |pdf|

@@ -8,11 +8,22 @@ file_path = "config/test.yml"
 
 
 file = File.open(file_path, 'r')
-while line = file.gets
-	aluno = Aluno.new('#{line}', 'branca')
+
+file.each_line do |line|
+	names = line.chomp
+	aluno = Aluno.new(names, 'branca')
 	certificado = Certificado.new(aluno)
-	GeradorCertificado.new.gerar_certificado(certificado, pdf_path, line)
+	GeradorCertificado.new.gerar_certificado(certificado, pdf_path, names)
 end
+
+
+# while line = file.gets
+# 	#Tava dando erro quando passava a line no parâmetro, fazendo assim parou de dar erro
+# 	names = line.chomp
+# 	aluno = Aluno.new(names, 'branca')
+# 	certificado = Certificado.new(aluno)
+# 	GeradorCertificado.new.gerar_certificado(certificado, pdf_path, names)
+# end
 
 
 
