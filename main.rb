@@ -10,10 +10,9 @@ file_path = "config/test.yml"
 file = File.open(file_path, 'r')
 
 file.each_line do |line|
-	names = line.chomp
-	aluno = Aluno.new(names, 'branca')
+	aluno = Aluno.new(line.chomp, 'branca')
 	certificado = Certificado.new(aluno)
-	GeradorCertificado.new.gerar_certificado(certificado, pdf_path, names)
+	GeradorCertificado.new.gerar_certificado(certificado, pdf_path, line)
 end
 
 
